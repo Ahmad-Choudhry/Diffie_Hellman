@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { modPow } from "../lib/dhMath";
+import InfoTooltip from "./InfoToolip";
 
 interface StepBarProps {
     p: string;
@@ -73,7 +74,21 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
 
         {step === 1 && (
           <div className="space-y-4">
-            <p className="text-sm">Select prime number <strong>p</strong> and generator <strong>g</strong>.</p>
+            <p className="text-sm">
+                Select prime number <strong>p</strong>
+                <InfoTooltip 
+                    text="A prime number used as the modulus in Diffie-Hellman." 
+                    link="https://en.wikipedia.org/wiki/Prime_number" 
+                />
+                <br />
+                and generator <strong>g</strong>
+                <InfoTooltip 
+                    text="A number whose powers modulo p generate all numbers from 1 to p-1." 
+                    link="https://en.wikipedia.org/wiki/Primitive_root_modulo_n" 
+                />
+                <br />
+            </p>
+
             <input
               type="text"
               placeholder="Enter p (e.g. 23)"
@@ -107,14 +122,14 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                 <p className="text-sm">Enter private keys for Alice and Bob.</p>
                 <input
                     type="text"
-                    placeholder="Private key for A"
+                    placeholder="Private key for Alice"
                     value={privateA}
                     onChange={(e) => setPrivateA(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
                 />
                 <input
                     type="text"
-                    placeholder="Private key for B"
+                    placeholder="Private key for Bob"
                     value={privateB}
                     onChange={(e) => setPrivateB(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
@@ -155,8 +170,8 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                 </button>
 
                 {publicA && (
-                    <div className="bg-indigo-700 p-2 rounded">
-                        <p>
+                    <div className="bg-indigo-700 p-2 rounded max-h-24 overflow-auto text-sm break-words">
+                        <p className="whitespace-pre-wrap">
                         {g}<sup>{privateA}</sup> mod {p} = <strong>{publicA}</strong>
                         </p>
                     </div>
@@ -177,8 +192,8 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                 </button>
 
                 {publicB && (
-                    <div className="bg-green-700 p-2 rounded">
-                        <p>
+                    <div className="bg-green-700 p-2 rounded max-h-24 overflow-auto text-sm break-words">
+                        <p className="whitespace-pre-wrap">
                         {g}<sup>{privateB}</sup> mod {p} = <strong>{publicB}</strong>
                         </p>
                     </div>
@@ -208,8 +223,8 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                 </button>
 
                 {sharedSecretA && (
-                    <div className="bg-indigo-700 p-2 rounded">
-                        <p>
+                    <div className="bg-indigo-700 p-2 rounded max-h-24 overflow-auto text-sm break-words">
+                        <p className="whitespace-pre-wrap">
                         ({publicB})<sup>{privateA}</sup> mod {p} = <strong>{sharedSecretA}</strong>
                         </p>
                     </div>
@@ -230,8 +245,8 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                 </button>
 
                 {sharedSecretB && (
-                    <div className="bg-green-700 p-2 rounded">
-                        <p>
+                    <div className="bg-green-700 p-2 rounded max-h-24 overflow-auto text-sm break-words">
+                        <p className="whitespace-pre-wrap">
                         ({publicA})<sup>{privateB}</sup> mod {p} = <strong>{sharedSecretB}</strong>
                         </p>
                     </div>
