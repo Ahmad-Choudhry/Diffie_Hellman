@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 
+@layer utilities {
+  .bg-hexagon {
+    background-color: #0f172a; /* slate-900 */
+    background-image:
+      radial-gradient(circle at 1px 1px, #0ff 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, #0ff2 1px, transparent 0);
+    background-size: 34px 60px;
+    background-position: 0 0, 17px 30px;
+  }
+}
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

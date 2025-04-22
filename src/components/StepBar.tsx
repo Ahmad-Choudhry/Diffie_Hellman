@@ -65,7 +65,7 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
   const goBack = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
-    <div className="h-full min-w-[100px] w-full sm:w-[320px] bg-blue-900 p-6 rounded-2xl shadow-lg text-white flex flex-col justify-between">
+    <div className="h-full min-w-[100px] w-full sm:w-[320px] bg-[#0a0f1c] p-6 rounded-2xl shadow-lg text-white flex flex-col justify-between">
       <div>
         <h2 className="text-xl font-semibold mb-4 text-center">Step {step}</h2>
 
@@ -77,14 +77,14 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
               placeholder="Enter p (e.g. 23)"
               value={p}
               onChange={(e) => setP(e.target.value)}
-              className="w-full px-3 py-2 rounded text-black"
+              className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
             />
             <input
               type="text"
               placeholder="Enter g (e.g. 5)"
               value={g}
               onChange={(e) => setG(e.target.value)}
-              className="w-full px-3 py-2 rounded text-black"
+              className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
             />
             <button
               className="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 text-sm"
@@ -108,14 +108,14 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                     placeholder="Private key for A"
                     value={privateA}
                     onChange={(e) => setPrivateA(e.target.value)}
-                    className="w-full px-3 py-2 rounded text-black"
+                    className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
                 />
                 <input
                     type="text"
                     placeholder="Private key for B"
                     value={privateB}
                     onChange={(e) => setPrivateB(e.target.value)}
-                    className="w-full px-3 py-2 rounded text-black"
+                    className="w-full px-3 py-2 rounded-xl bg-black text-white placeholder:text-gray-400 outline-none border border-white focus:border-blue-800 focus:ring-2 focus:ring-blue-800 transition-all"
                 />
                 <button
                     className="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 text-sm"

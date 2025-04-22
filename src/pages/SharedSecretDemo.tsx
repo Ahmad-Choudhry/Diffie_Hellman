@@ -24,12 +24,10 @@ export default function SharedSecretDemo() {
     setSharedSecretB("");
   };
 
-  <div className='fdssd'> </div>
-
   return (
-    <div className="w-screen h-screen flex flex-col bg-gradient-to-br from-slate-900 to-gray-800 text-white px-4 overflow-x-auto">
+    <div className="w-full h-full bg-hexagon flex flex-col bg-gradient-to-br from-slate-900 to-gray-800 text-white px-4 sm:px-6 overflow-x-auto">
         <TitleHeader />
-      <div className="flex flex-wrap w-full max-w-7xl gap-4 h-[600px] items-stretch mx-auto">
+      <div className="flex flex-wrap w-full max-w-7xl px-4 sm:px-6 gap-4 h-[600px] items-stretch mx-auto">
         <div className="flex flex-nowrap flex-[3] gap-3 min-w-0 h-full shrink-0">
           {/* Person A */}
           <div className="flex-[1_1_0%] min-w-0 h-full">
