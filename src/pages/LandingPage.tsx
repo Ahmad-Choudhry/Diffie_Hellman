@@ -4,7 +4,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
     return (
-      <main className="w-screen h-screen bg-gradient-to-br from-slate-900 to-gray-800 text-white flex flex-col justify-center items-center">
+      <main className="w-full h-full bg-gradient-to-br from-slate-900 to-gray-800 text-white flex flex-col justify-center items-center">
         <h1 className="text-4xl font-bold mb-4 text-center w-full">
           🔐 Diffie-Hellman
         </h1>

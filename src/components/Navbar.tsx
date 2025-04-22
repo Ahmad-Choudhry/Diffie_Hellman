@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="w-full bg-black text-white py-4 px-4 sm:px-6 border-b border-gray-700 shadow-sm z-50 relative overflow-x-auto">
+    <nav className="w-full bg-black text-white py-4 px-4 sm:px-6 border-b border-gray-700 shadow-sm z-50 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Player

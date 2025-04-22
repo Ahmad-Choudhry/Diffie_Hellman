@@ -31,7 +31,7 @@ export default function SharedSecretDemo() {
         <div className="flex flex-nowrap flex-[3] gap-3 min-w-0 h-full shrink-0">
           {/* Person A */}
           <div className="flex-[1_1_0%] min-w-0 h-full">
-            <ColumnComponent title="Person A">
+            <ColumnComponent title="Alice">
                 <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1">
                     <p>Private Key: <span className="text-red-400 font-semibold">{privateA || "-"}</span></p>
                     <p>Shared Secret: <span className="text-red-400 font-semibold">{sharedSecretA || "-"}</span></p>
@@ -45,15 +45,15 @@ export default function SharedSecretDemo() {
                 <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1">
                     <p>p: <span className="text-green-400 font-semibold">{p || "-"}</span></p>
                     <p>g: <span className="text-green-400 font-semibold">{g || "-"}</span></p>
-                    <p>Public A: <span className="text-green-400 font-semibold">{publicA || "-"}</span></p>
-                    <p>Public B: <span className="text-green-400 font-semibold">{publicB || "-"}</span></p>
+                    <p>Public Alice: <span className="text-green-400 font-semibold">{publicA || "-"}</span></p>
+                    <p>Public Bob: <span className="text-green-400 font-semibold">{publicB || "-"}</span></p>
                 </div>
           </ColumnComponent>
           </div>
 
           {/* Person B */}
           <div className="flex-[1_1_0%] min-w-0 h-full">
-            <ColumnComponent title="Person B">
+            <ColumnComponent title="Bob">
                 <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1">
                     <p>Private Key: <span className="text-red-400 font-semibold">{privateB || "-"}</span></p>
                     <p>Shared Secret: <span className="text-red-400 font-semibold">{sharedSecretB || "-"}</span></p>

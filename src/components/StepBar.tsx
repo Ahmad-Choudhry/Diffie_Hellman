@@ -53,7 +53,7 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
 
     if (step === 3) {
         if (!isInteger(publicA) || !isInteger(publicB)) {
-          setError("You must compute both Public A and Public B before continuing.");
+          setError("You must compute both Public Alice and Public Bob before continuing.");
           return;
         }
         setError("");
@@ -67,7 +67,9 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
   return (
     <div className="h-full min-w-[100px] w-full sm:w-[320px] bg-[#0a0f1c] p-6 rounded-2xl shadow-lg text-white flex flex-col justify-between">
       <div>
-        <h2 className="text-xl font-semibold mb-4 text-center">Step {step}</h2>
+      <h2 className="text-3xl font-extrabold mb-4 text-center text-blue-500">
+        Step {step}
+      </h2>
 
         {step === 1 && (
           <div className="space-y-4">
@@ -102,7 +104,7 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
 
         {step === 2 && (
             <div className="space-y-4">
-                <p className="text-sm">Enter private keys for Person A and Person B.</p>
+                <p className="text-sm">Enter private keys for Alice and Bob.</p>
                 <input
                     type="text"
                     placeholder="Private key for A"
@@ -135,8 +137,8 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
         {step === 3 && (
             <div className="space-y-4 text-sm">
                 <p>Compute public keys using:</p>
-                <p><strong>Public A</strong> = g<sup>a</sup> mod p</p>
-                <p><strong>Public B</strong> = g<sup>b</sup> mod p</p>
+                <p><strong>Public Alice</strong> = g<sup>a</sup> mod p</p>
+                <p><strong>Public Bob</strong> = g<sup>b</sup> mod p</p>
 
                 <button
                     className="bg-indigo-600 hover:bg-indigo-500 px-3 py-1 rounded"
@@ -145,11 +147,11 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                         const result = modPow(BigInt(g), BigInt(privateA), BigInt(p));
                         setPublicA(result.toString());
                         } catch {
-                        alert("Invalid input for Public A");
+                        alert("Invalid input for Public Alice");
                         }
                     }}
                 >
-                    Calculate Public A
+                    Calculate Public Alice
                 </button>
 
                 {publicA && (
@@ -167,11 +169,11 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                         const result = modPow(BigInt(g), BigInt(privateB), BigInt(p));
                         setPublicB(result.toString());
                         } catch {
-                        alert("Invalid input for Public B");
+                        alert("Invalid input for Public Bob");
                         }
                     }}
                 >
-                    Calculate Public B
+                    Calculate Public Bob
                 </button>
 
                 {publicB && (
@@ -198,11 +200,11 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                         const result = modPow(BigInt(publicB), BigInt(privateA), BigInt(p));
                         setSharedSecretA(result.toString());
                         } catch {
-                        alert("Invalid input for Shared Secret A");
+                        alert("Invalid input for Shared Secret Alice");
                         }
                     }}
                 >
-                    Compute Shared Secret for A
+                    Compute Shared Secret for Alice
                 </button>
 
                 {sharedSecretA && (
@@ -220,11 +222,11 @@ const StepBar: React.FC<StepBarProps> = ({ p, g, setP, setG, privateA, privateB,
                         const result = modPow(BigInt(publicA), BigInt(privateB), BigInt(p));
                         setSharedSecretB(result.toString());
                         } catch {
-                        alert("Invalid input for Shared Secret B");
+                        alert("Invalid input for Shared Secret Bob");
                         }
                     }}
                 >
-                    Compute Shared Secret for B
+                    Compute Shared Secret for Bob
                 </button>
 
                 {sharedSecretB && (
