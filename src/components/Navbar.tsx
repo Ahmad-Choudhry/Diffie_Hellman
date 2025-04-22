@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             onClick={() => setIsDropdownOpen((prev) => !prev)}
             className="hover:text-blue-400 transition-colors focus:outline-none"
           >
-            About ▾
+            Topics ▾
           </button>
 
           {isDropdownOpen && (
