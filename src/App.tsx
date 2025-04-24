@@ -2,6 +2,7 @@ import LandingPage from "./pages/LandingPage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import SharedSecretDemo from './pages/SharedSecretDemo';
+import WhatIsDH from "./pages/WhatIsDH";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/demo" element={<SharedSecretDemo />} />
+            <Route path="/what-is-dh" element={<WhatIsDH />} />
           </Routes>
         </div>
       </div>
