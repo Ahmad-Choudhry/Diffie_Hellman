@@ -1,8 +1,26 @@
-import LandingPage from "./pages/LandingPage";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
+import LandingPage from "./pages/LandingPage";
 import SharedSecretDemo from './pages/SharedSecretDemo';
 import WhatIsDH from "./pages/WhatIsDH";
+import SecurityRisks from "./pages/SecurityRisks";
+import LearnMore from "./pages/LearnMore";
+
+// Wrap routes in a component that uses useLocation
+function AppRoutes() {
+  const location = useLocation();
+
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/demo" element={<SharedSecretDemo key={location.pathname} />} />
+      <Route path="/what-is-dh" element={<WhatIsDH key={location.pathname} />} />
+      <Route path="/security-risks" element={<SecurityRisks key={location.pathname} />} />
+      <Route path="/learn-more" element={<LearnMore key={location.pathname} />} />
+    </Routes>
+  );
+}
 
 function App() {
   return (
@@ -12,25 +30,11 @@ function App() {
           <Navbar />
         </div>
         <div className="flex-1 overflow-y-auto">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/demo" element={<SharedSecretDemo />} />
-            <Route path="/what-is-dh" element={<WhatIsDH />} />
-          </Routes>
+          <AppRoutes />
         </div>
       </div>
     </BrowserRouter>
   );
 }
 
-
-
 export default App;
-
-
-
-
-
-
-
-

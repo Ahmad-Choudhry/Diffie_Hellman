@@ -1,6 +1,5 @@
-// src/components/TopicHeader.tsx
 import React from "react";
-import Lottie from "lottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../assets/cryptoanimation.json";
 
 interface TopicHeaderProps {
@@ -11,7 +10,12 @@ interface TopicHeaderProps {
 const TopicHeader: React.FC<TopicHeaderProps> = ({ title, subtitle }) => (
   <div className="w-full flex flex-col items-center justify-center py-6">
     <div className="flex items-center gap-4">
-      <Lottie animationData={animationData} loop autoplay className="w-14 h-14" />
+      {/* <Player
+        autoplay
+        loop
+        src={animationData}
+        style={{ height: "56px", width: "56px" }}
+      /> */}
       <h1 className="text-2xl md:text-3xl font-bold tracking-wide text-white uppercase">
         <span className="text-[#646cff]">Topic:</span> {title}
       </h1>
