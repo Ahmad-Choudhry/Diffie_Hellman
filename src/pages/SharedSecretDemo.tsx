@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ColumnComponent from '../components/ColumnComponent';
 import StepBar from '../components/StepBar';
 import TitleHeader from '../components/TitleHeader';
 
-// export default function SharedSecretDemo() {
-//   return <div className="text-white">Hello from Demo</div>;
-// }
 
 export default function SharedSecretDemo() {
   const [p, setP] = useState("");

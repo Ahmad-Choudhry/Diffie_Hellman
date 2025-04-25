@@ -1,4 +1,3 @@
-import React from "react";
 import TopicHeader from "../components/TopicHeader";
 import Description from "../components/Description";
 

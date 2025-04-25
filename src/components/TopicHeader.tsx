@@ -1,6 +1,5 @@
 import React from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import animationData from "../assets/cryptoanimation.json";
+
 
 interface TopicHeaderProps {
   title: string;

@@ -1,6 +1,5 @@
 import React from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import animationData from "../assets/cryptoanimation.json";
+
 
 const TitleHeader: React.FC = () => (
   <div className="w-full flex flex-col items-center justify-center py-6">
