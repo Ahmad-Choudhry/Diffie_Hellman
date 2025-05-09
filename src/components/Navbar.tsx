@@ -22,10 +22,16 @@ const Navbar: React.FC = () => {
 
         <div className="space-x-6 text-sm">
           <Link to="/demo" className={navLinkClass("/demo")}>
-            Demo
+            Demo (DH)
+          </Link>
+          <Link to="/ecdh" className={navLinkClass("/ecdh")}>
+            Demo (ECDH)
           </Link>
           <Link to="/what-is-dh" className={navLinkClass("/what-is-dh")}>
             What is DH?
+          </Link>
+          <Link to="/what-is-ecdh" className={navLinkClass("/what-is-ecdh")}>
+            What is ECDH?
           </Link>
           <Link to="/security-risks" className={navLinkClass("/security-risks")}>
             Security Risks

@@ -13,6 +13,7 @@ export default function SharedSecretDemo() {
   const [publicB, setPublicB] = useState("");
   const [sharedSecretA, setSharedSecretA] = useState("");
   const [sharedSecretB, setSharedSecretB] = useState("");
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
 
   const resetAll = () => {
     setP("");
@@ -28,7 +29,26 @@ export default function SharedSecretDemo() {
   return (
     <div className="w-full h-full bg-hexagon flex flex-col bg-gradient-to-br from-slate-900 to-gray-800 text-white px-4 sm:px-6 overflow-x-auto">
         <TitleHeader />
-      <div className="flex flex-wrap w-full max-w-7xl px-4 sm:px-6 gap-4 h-[600px] items-stretch mx-auto">
+        {showDisclaimer && (
+          <div className="relative bg-red-900 text-red-200 text-sm border border-red-500 rounded-md px-4 py-3 max-w-3xl mx-auto mb-4">
+            <div className="flex justify-between items-start">
+              <p className="text-center w-full">
+                ⚠️ Integer-based Diffie-Hellman (mod p) is no longer secure for modern applications. Even with a well-chosen prime, it is vulnerable to sub-exponential attacks like Index Calculus. This demo is for educational purposes only.
+              </p>
+              <button
+                onClick={() => setShowDisclaimer(false)}
+                className="ml-2 text-red-300 hover:text-white text-sm leading-none"
+                aria-label="Close disclaimer"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
+
+
+
+      <div className="flex flex-wrap w-full max-w-7xl px-4 sm:px-6 gap-4 h-[600px] items-stretch mx-auto mb-6">
         <div className="flex flex-nowrap flex-[3] gap-3 min-w-0 h-full shrink-0">
           {/* Person A */}
           <div className="flex-[1_1_0%] min-w-0 h-full">

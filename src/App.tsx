@@ -5,6 +5,9 @@ import SharedSecretDemo from './pages/SharedSecretDemo';
 import WhatIsDH from "./pages/WhatIsDH";
 import SecurityRisks from "./pages/SecurityRisks";
 import LearnMore from "./pages/LearnMore";
+import SharedSecretECDHDemo from './pages/SharedSecretECDHDemo';
+import WhatIsECDH from './pages/WhatIsECDH';
+
 
 // Wrap routes in a component that uses useLocation
 function AppRoutes() {
@@ -13,10 +16,12 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/demo" element={<SharedSecretDemo key={location.pathname} />} />
-      <Route path="/what-is-dh" element={<WhatIsDH key={location.pathname} />} />
-      <Route path="/security-risks" element={<SecurityRisks key={location.pathname} />} />
-      <Route path="/learn-more" element={<LearnMore key={location.pathname} />} />
+      <Route path="/demo" element={<SharedSecretDemo/>} />
+      <Route path="/ecdh" element={<SharedSecretECDHDemo/>} />
+      <Route path="/what-is-dh" element={<WhatIsDH/>} />
+      <Route path="/what-is-ecdh" element={<WhatIsECDH/>} />
+      <Route path="/security-risks" element={<SecurityRisks/>} />
+      <Route path="/learn-more" element={<LearnMore/>} />
     </Routes>
   );
 }
