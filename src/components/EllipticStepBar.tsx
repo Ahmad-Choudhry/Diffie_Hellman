@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { G, runECDH} from "../math/ellipticCurve";
+import { runECDH } from "../math/ellipticCurve";
 import InfoTooltip from "./InfoToolip";
 import { Point } from "../math/ellipticCurve";
 

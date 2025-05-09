@@ -3,7 +3,6 @@ export type Point = [number, number] | null;
 
 const p = 17;
 const a = 2;
-const b = 2;
 export const G: Point = [5, 1]; // Base point
 
 export function mod(n: number, m: number): number {
