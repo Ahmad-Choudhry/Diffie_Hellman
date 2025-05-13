@@ -49,7 +49,7 @@ export default function SharedSecretECDHDemo() {
           <div className="flex-[1_1_0%] min-w-0 h-full">
             <ColumnComponent title="Alice">
               <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1 mb-4">
-                <p>Private Key: <span className="text-red-400 font-semibold">{privateA || '-'}</span></p>
+                <p>Private Key (a): <span className="text-red-400 font-semibold">{privateA || '-'}</span></p>
                 <p>Shared Secret: <span className="text-red-400 font-semibold">{sharedSecretA ? JSON.stringify(sharedSecretA) : '-'}</span></p>
               </div>
             </ColumnComponent>

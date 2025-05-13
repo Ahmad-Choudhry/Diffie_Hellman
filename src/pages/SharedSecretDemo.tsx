@@ -54,7 +54,7 @@ export default function SharedSecretDemo() {
           <div className="flex-[1_1_0%] min-w-0 h-full">
             <ColumnComponent title="Alice">
                 <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1">
-                    <p>Private Key: <span className="text-red-400 font-semibold">{privateA || "-"}</span></p>
+                    <p>Private Key (a): <span className="text-red-400 font-semibold">{privateA || "-"}</span></p>
                     <p>Shared Secret: <span className="text-red-400 font-semibold">{sharedSecretA || "-"}</span></p>
                 </div>
             </ColumnComponent>
@@ -76,7 +76,7 @@ export default function SharedSecretDemo() {
           <div className="flex-[1_1_0%] min-w-0 h-full">
             <ColumnComponent title="Bob">
                 <div className="text-left text-sm font-mono overflow-x-auto whitespace-nowrap space-y-1">
-                    <p>Private Key: <span className="text-red-400 font-semibold">{privateB || "-"}</span></p>
+                    <p>Private Key (b): <span className="text-red-400 font-semibold">{privateB || "-"}</span></p>
                     <p>Shared Secret: <span className="text-red-400 font-semibold">{sharedSecretB || "-"}</span></p>
                 </div>
             </ColumnComponent>
