@@ -36,7 +36,7 @@ This shared secret can then be used to encrypt communications between the two pa
 To run the project locally:
 
 ```bash
-git clone https://github.com/yourusername/diffie-hellman-visualizer.git
-cd diffie-hellman-visualizer
+git clone https://github.com/Ahmad-Choudhry/Diffie_Hellman.git
+cd Diffie_Hellman
 npm install
 npm run dev
