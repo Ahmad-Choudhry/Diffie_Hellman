@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# Diffie-Hellman Key Exchange Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive visualizer that demonstrates the Diffie-Hellman Key Exchange protocol — a foundational concept in modern cryptography. This project is designed for learners, educators, and crypto-enthusiasts who want to understand how secure key exchange works under the hood.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://diffie-hellman-demo.vercel.app/](https://diffie-hellman-demo.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Step-by-step visualization of the Diffie-Hellman key exchange process
+- Real-time generation of large prime numbers, private keys, public keys, and shared secrets
+- Clean, intuitive interface with visual feedback for each step
+- Inline explanations to help users understand the math
+- Fully responsive design for desktop and mobile devices
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## What is Diffie-Hellman?
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+The Diffie-Hellman key exchange is a cryptographic protocol that allows two parties to securely establish a shared secret over an insecure channel. The key idea is:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. A large prime number (p) and a base (g) are selected and shared publicly.
+2. Each party chooses a private secret number.
+3. Each party computes and shares a corresponding public value using the formula `g^private mod p`.
+4. By combining the other party's public value with their own private value, both compute the same shared secret without it ever being transmitted.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This shared secret can then be used to encrypt communications between the two parties.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Tech Stack
+
+- React (frontend framework)
+- TypeScript (type safety)
+- Tailwind CSS (styling)
+- Vercel (deployment)
+- JavaScript BigInt (handling large numbers)
+
+## Getting Started
+
+To run the project locally:
+
+```bash
+git clone https://github.com/yourusername/diffie-hellman-visualizer.git
+cd diffie-hellman-visualizer
+npm install
+npm run dev
